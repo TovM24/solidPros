@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SolidPros</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='responsive.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script> -->
+
+
+
+    </head>
+    <body id="demo1">
+        <div class="sidebar-mobile">
+            <div class="active-logo-mobile">SolidPros</div>
+            <div class="menuToggle-mobile"></div>
+            
+            <div class="menu-mobile">
+                <!-- <h1>xin chao</h1> -->
+                <div class="menu-mobile-container">
+                    <ul>
+                        <li>
+                            <div class="list-item" onclick="scrollToSection('demo1')">
+                                <a href="#">
+                                    <span class="text">home</span>
+                                </a>
+                            </div>
+                        </li>
+        
+                        <li>
+                            <div class="list-item" onclick="scrollToSection('demo2')">
+                                <a href="#">
+                                    <span class="text">guide</span>
+                                </a>
+                            </div>
+                        </li>
+        
+                        <li>
+                            <div class="list-item" onclick="scrollToSection('demo3')">
+                                <a href="#">
+                                    <span class="text">About US</span>
+                                </a>
+                            </div>
+                        </li>
+        
+                        <li>
+                            <div class="list-item" onclick="scrollToSection('demo4')">
+                                <a href="#">
+                                    <span class="text">Contact</span>
+                                </a>
+                            </div>
+                        </li>
+        
+        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- <div class="blur-container"> -->
+        <div class="sidebar active">
+            <div class="menuToggle"></div>
+
+            <div class="list">
+                <div class="list-item active" onclick="scrollToSection('demo1')">
+                    <a href="#" style="--clr:#560bad">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="text">Home</span>
+                    </a>
+                </div>
+
+                <div class="list-item" onclick="scrollToSection('demo2')">
+                    <a href="#" style="--clr:#560bad">
+                        <span class="icon">
+                            <ion-icon name="book-outline"></ion-icon> 
+                        </span>
+                        <span class="text">Guide</span>
+                    </a>
+                </div>
+
+                <div class="list-item" onclick="scrollToSection('demo3')">
+                    <a href="#" style="--clr:#560bad">
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <span class="text">About US</span>
+                    </a>
+                </div>
+
+                <div class="list-item" onclick="scrollToSection('demo4')">
+                    <a href="#" style="--clr:#560bad">
+                        <span class="icon">
+                            <ion-icon name="call-outline"></ion-icon> 
+                        </span>
+                        <span class="text">Contact</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="logo">S</div>
+            <div class="active-logo">SolidPros</div>
+        </div>
+
+        
+    
+
+        <div class="content">
+            <div class="home">
+                <div class="home-container">
+                    <div class="subheadline">
+                        <div class="subheadline-deco-line"></div>
+                        <div class="subheadline-label">home</div>
+                        <div class="subheadline-deco-line"></div>
+                    </div>
+
+                    <span class="head-text">Unleash the Power of OCR: Effortlessly Transform Images into Editable Text!</span>
+
+                    <button class="home-add" id="home-add" onclick="document.getElementById('upload-input').click()">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
+                            </svg>
+                        </div>
+                        <span>Upload image</span>
+                    </button>
+
+                    <div class="home-box">
+                        <label for="upload-input">
+                            <img id="upload-image-preview" src="placeholder-image.jpg" alt="The image will be displayed here">
+                        </label>
+                        <div class="home-text">
+                            <p id="displayText">The text will be displayed here</p>
+                        </div>
+                    </div>
+
+                    <input type="file" id="upload-input" style="display: none" onchange="displayDemo()">
+
+                </div>
+                <!-- Content for Demo 1 -->
+            </div>
+            
+            <div class="guide" id="demo2">
+                <div class="guide-container">
+                    <div class="subheadline">
+                        <div class="subheadline-deco-line"></div>
+                        <div class="subheadline-label">guide</div>
+                        <div class="subheadline-deco-line"></div>
+                    </div>
+
+                    <span class="head-text">Simple Steps to Convert Images into Editable Text</span>
+
+                    <!-- <div class="guide-container-box"> -->
+                    <div class="guide-box">
+                        <div class="card">
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"></path></svg> -->
+
+                            <img src="../static/img/upload-img.png" alt="">
+
+                            <div class="card__content">
+                                <p class="card__title">How to Upload Images on the Website</p>
+                                <p class="card__description">On the website, initiate the image uploading process by locating and clicking on the 'Upload Image' button.</p>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"></path></svg> -->
+
+                            <img src="../static/img/display-here.png" alt="">
+
+                            <div class="card__content">
+                                <p class="card__title">Optimized Automatic Preview</p>
+                                <p class="card__description">After selecting an image, the website will automatically display a preview with optimized dimensions for convenient viewing.</p>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"></path></svg> -->
+
+                            <img src="../static/img/display-text.png" alt="">
+
+                            <div class="card__content">
+                                <p class="card__title">Seamless OCR Results Display</p>
+                                <p class="card__description">Once OCR is done, the website will automatically show the extracted text, allowing you to view it directly without opening another application.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- </div> -->
+                </div>
+                <!-- Content for Demo 2 -->
+            </div>
+
+            <div class="aboutUs" id="demo3">
+                <div class="aboutUs-container">
+                    <div class="subheadline">
+                        <div class="subheadline-deco-line"></div>
+                        <div class="subheadline-label">about us</div>
+                        <div class="subheadline-deco-line"></div>
+                    </div>
+
+                    <span class="head-text">Empowering Connections Through OCR Innovation</span>
+
+                    <p class="aboutUs-text">Welcome to our website! We take pride in introducing the primary function of our site, which is Optical Character Recognition (OCR) technology. We are committed to providing the best experience for users in converting images and documents containing text into editable data.
+
+                    With an experienced and innovative team, we continuously develop and update OCR technology to meet the increasingly diverse demands of the user community. Our website is not only a place to help you convert text, but also provides flexible tools and supportive utilities.
+                    
+                    With a mission to make text processing easy and efficient, we hope that our website will be a valuable resource for the OCR user community. Thank you for visiting, and let's share the passion for this technology!</p>
+                </div>
+            </div>
+
+            <div class="footer" id="demo4">
+                <div class="footer-container">
+                    <div class="subheadline">
+                        <div class="subheadline-deco-line"></div>
+                        <div class="subheadline-label">contact us</div>
+                        <div class="subheadline-deco-line"></div>
+                    </div>
+
+                    <span class="head-text">Empowering Connections Through OCR Innovation</span>
+                    
+                    <div class="contact">
+                        <div class="contact-detail">
+                            <span class="head">CONTACT DETAIL</span>
+                            <div class="detail">
+                                <div class="detail-loc">
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                                        </svg>                                      
+                                    </div>
+    
+                                    <span><span class="detail-text">Location : </span>THCS Nguyen Van Troi || Thuan An || Binh Duong</span>
+                                </div>
+
+                                <div class="detail-loc">
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                                        </svg>                                          
+                                    </div>
+    
+                                    <span><span class="detail-text">Email : </span>tovm24xinchao@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="contact-social">
+                            <a href="https://www.facebook.com/boll.pool.5876">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" height="32" width="32">
+                                        <path fill="#999" d="M24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0ZM26.5016 25.0542V38.1115H21.0991V25.0547H18.4V20.5551H21.0991V17.8536C21.0991 14.1828 22.6231 12 26.9532 12H30.5581V16.5001H28.3048C26.6192 16.5001 26.5077 17.1289 26.5077 18.3025L26.5016 20.5546H30.5836L30.1059 25.0542H26.5016Z" clip-rule="evenodd" fill-rule="evenodd"></path>
+                                </svg>
+                            </a> -->
+
+                            <!-- <a href="https://www.facebook.com/boll.pool.5876">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" height="32" width="32">
+                                        <path fill="#999" d="M24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0ZM26.5016 25.0542V38.1115H21.0991V25.0547H18.4V20.5551H21.0991V17.8536C21.0991 14.1828 22.6231 12 26.9532 12H30.5581V16.5001H28.3048C26.6192 16.5001 26.5077 17.1289 26.5077 18.3025L26.5016 20.5546H30.5836L30.1059 25.0542H26.5016Z" clip-rule="evenodd" fill-rule="evenodd"></path>
+                                </svg>
+                            </a>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" height="32" width="32">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                            </svg>   -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Content for Demo 5 -->
+            </div>
+        </div>
+        <!-- </div> -->
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
+        <script src="{{ url_for('static', filename='main.js') }}"></script>
+        <script src="{{ url_for('static', filename='responsive.js') }}"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
+    </body>
+</html>
